@@ -149,10 +149,10 @@ VL53L0X_Dev_t *initialise(uint8_t i2c_address, uint8_t TCA9548A_Device, uint8_t 
     }
 
     VL53L0X_Dev_t *dev = (VL53L0X_Dev_t *)malloc(sizeof(VL53L0X_Dev_t));
-    memset(dev, 0, sizeof(VL53L0X_Dev_t));
 
     if (dev != NULL)
     {
+        memset(dev, 0, sizeof(VL53L0X_Dev_t));
         // Initialize Comms to the default address to start
         // Otherwise we cannot change the I2C address later
         dev->I2cDevAddr      = VL53L0X_DEFAULT_ADDRESS;
