@@ -154,7 +154,8 @@ VL53L0X_Dev_t *initialise(uint8_t i2c_address, uint8_t TCA9548A_Device, uint8_t 
     if (dev != NULL)
     {
         // Initialize Comms to the default address to start
-        dev->I2cDevAddr      = i2c_address;
+        // Otherwise we cannot change the I2C address later
+        dev->I2cDevAddr      = VL53L0X_DEFAULT_ADDRESS;
         dev->TCA9548A_Device = TCA9548A_Device;
         dev->TCA9548A_Address = TCA9548A_Address;
 
